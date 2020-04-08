@@ -1,6 +1,10 @@
 version: '3.7'
 
 services:
+  aws:
+    image: amazon/aws-cli:latest
+    volumes:
+      - ~./Owner/.aws:/root/.aws
   terraform:
     build:
       args:
