@@ -7,4 +7,7 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
 RUN unzip terraform_${TERRAFORM_VERSION}_linux_386.zip
 RUN mv terraform /usr/local/bin/
 
+WORKDIR /app
+COPY *.tf ./
+
 CMD [ "terraform", "--version" ]
