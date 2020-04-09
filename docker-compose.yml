@@ -5,7 +5,7 @@ services:
     build:
       args:
         TERRAFORM_VERSION: ${TERRAFORM_VERSION}
-      context: .
+      context: ./state
     volumes:
       - ${AWS_CREDENTIALS_PATH}:/root/.aws
 
