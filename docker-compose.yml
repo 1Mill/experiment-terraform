@@ -7,4 +7,4 @@ services:
         TERRAFORM_VERSION: ${TERRAFORM_VERSION}
       context: .
     volumes:
-      - ~./Owner/.aws:/root/.aws
+      - ${AWS_CREDENTIALS_PATH}:/root/.aws
