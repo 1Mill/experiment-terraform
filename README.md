@@ -5,4 +5,5 @@ https://learn.hashicorp.com/terraform/aws/lambda-api-gateway
 
 1. https://learn.hashicorp.com/terraform/aws/lambda-api-gateway
 2. https://learn.hashicorp.com/terraform/getting-started/build
-3. https://github.com/gruntwork-io/intro-to-terraform/blob/master/s3-backend/main.tf
+3. https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa
+4. https://github.com/gruntwork-io/intro-to-terraform/blob/master/s3-backend/main.tf
