@@ -1,6 +1,14 @@
 version: '3.7'
 
 services:
+  state:
+    build:
+      args:
+        TERRAFORM_VERSION: ${TERRAFORM_VERSION}
+      context: .
+    volumes:
+      - ${AWS_CREDENTIALS_PATH}:/root/.aws
+
   terraform:
     build:
       args:
