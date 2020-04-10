@@ -1,4 +1,6 @@
 terraform {
+	required_version = "~> 0.12.24"
+
 	backend "s3" {
 		bucket			= "experiment-terraform-state"
 		dynamodb_table		= "experiment-terraform-state-locks"
