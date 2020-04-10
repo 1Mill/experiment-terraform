@@ -19,8 +19,8 @@ provider "aws" {
 	version = "~> 2.56"
 }
 
-resource "aws_instance" "example" {
-	// ami = "ami-2757f631"
-	ami = "ami-b374d5a5"
-	instance_type	= "t2.micro"
-}
+// resource "aws_instance" "example" {
+// 	// ami = "ami-2757f631"
+// 	ami = "ami-b374d5a5"
+// 	instance_type	= "t2.micro"
+// }
