@@ -1,6 +1,11 @@
 version: '3.7'
 
 services:
+  lambda:
+    build: ./lambda
+    volumes:
+      - ./lambda:/app
+
   state:
     build:
       args:
