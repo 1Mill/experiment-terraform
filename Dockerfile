@@ -9,6 +9,7 @@ RUN mv terraform /usr/local/bin/
 RUN rm terraform_${TERRAFORM_VERSION}_linux_386.zip
 
 WORKDIR /app
-COPY lambda/*.tf ./
+ARG FOLDER
+COPY ${FOLDER}/*.tf ./
 
 CMD [ "terraform", "--version" ]

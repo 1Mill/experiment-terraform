@@ -17,6 +17,7 @@ services:
   terraform:
     build:
       args:
+        FOLDER: ${FOLDER}
         TERRAFORM_VERSION: ${TERRAFORM_VERSION}
       context: .
     volumes:
