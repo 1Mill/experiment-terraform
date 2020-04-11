@@ -19,7 +19,7 @@ resource "aws_api_gateway_integration" "lambda_root" {
 }
 
 resource "aws_api_gateway_method" "proxy_root" {
-	resource_id = aws_api_gateway_rest_api.root_resource_id
+	resource_id = aws_api_gateway_rest_api.example.root_resource_id
 	rest_api_id = aws_api_gateway_rest_api.example.id
 
 	authorization = "NONE"
