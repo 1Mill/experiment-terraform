@@ -25,7 +25,7 @@ resource "aws_lambda_function" "example" {
 	role = aws_iam_role.lambda_exec.arn
 	runtime = "nodejs12.x"
 	s3_bucket = "experiment-terraform-serverless"
-	s3_key = "v0.0.1/example.zip"
+	s3_key = "v${var.app_version}/example.zip"
 }
 
 resource "aws_iam_role" "lambda_exec" {
