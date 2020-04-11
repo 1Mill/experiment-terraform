@@ -9,6 +9,6 @@ RUN mv terraform /usr/local/bin/
 RUN rm terraform_${TERRAFORM_VERSION}_linux_386.zip
 
 WORKDIR /app
-COPY example_serverless_*.tf ./
+COPY lambda/*.tf ./
 
 CMD [ "terraform", "--version" ]
