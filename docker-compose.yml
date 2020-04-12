@@ -6,7 +6,7 @@ services:
     volumes:
       - ./lambda:/app
 
-  node-exmaple:
+  node-example:
     build: ./node-example
     environment:
       PORT: 3000
