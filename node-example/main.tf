@@ -7,6 +7,14 @@ resource "aws_ecs_cluster" "experiment_node_cluster" {
 	name = "experiment_node_cluster"
 }
 
+resource "aws_ecs_service" "experiment_node_service" {
+	cluster = aws_ecs_cluster.experiment_node_cluster.id
+	desired_count = 3
+	launch_type = "FARGATE"
+	name = "experiment_node_service"
+	task_definition = aws_ecs_task_definition.expeirment_node_task.arn
+}
+
 resource "aws_ecs_task_definition" "expeirment_node_task" {
 	container_definitions = <<DEFINITION
 [
