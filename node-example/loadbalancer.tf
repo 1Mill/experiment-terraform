@@ -11,6 +11,25 @@ resource "aws_alb" "application_load_balancer" {
 	]
 }
 
+resource "aws_lb_target_group" "target_group" {
+	name = "target-group"
+	port = 80
+	protocol = "HTTP"
+	target_type = "ip"
+	vpc_id = aws_default_vpc.default_network.id
+}
+
+resource "aws_lb_listener" "listener" {
+	load_balancer_arn = aws_alb.application_load_balancer.arn
+	port = "80"
+	protocol = "HTTP"
+
+	default_action {
+		target_group_arn = aws_lb_target_group.target_group.arn
+		type = "forward"
+	}
+}
+
 resource "aws_security_group" "load_balancer_security_group" {
 	egress {
 		cidr_blocks = [ "0.0.0.0/0" ]
