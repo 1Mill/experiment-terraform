@@ -1,4 +1,4 @@
-resource "aws_default_vpc" {
+resource "aws_default_vpc" "default_network" {
 }
 
 resource "aws_default_subnet" "default_subnet_a" {
