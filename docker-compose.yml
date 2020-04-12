@@ -37,5 +37,6 @@ services:
         FOLDER: ${FOLDER}
         TERRAFORM_VERSION: ${TERRAFORM_VERSION}
       context: .
+      dockerfile: terraform.Dockerfile
     volumes:
       - ${AWS_CREDENTIALS_PATH}:/root/.aws
