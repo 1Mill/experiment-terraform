@@ -1,6 +1,13 @@
 version: '3.7'
 
 services:
+  aws:
+    build:
+      context: .
+      dockerfile: aws.Dockerfile
+    volumes:
+      - ${AWS_CREDENTIALS_PATH}:/root/.aws
+
   lambda:
     build: ./lambda
     volumes:
