@@ -7,6 +7,7 @@ services:
       dockerfile: aws.Dockerfile
     volumes:
       - ${AWS_CREDENTIALS_PATH}:/root/.aws
+      - ${DOCKER_CREDENTIALS_PATH}:/root/.docker
 
   lambda:
     build: ./lambda
