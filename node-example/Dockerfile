@@ -7,7 +7,7 @@ RUN npm install
 
 COPY *.js ./
 
-ENV PORT ${PORT}
+ENV PORT 3000
 
 EXPOSE ${PORT}
 
