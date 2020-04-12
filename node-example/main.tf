@@ -27,6 +27,7 @@ resource "aws_ecs_service" "experiment_node_service" {
 			aws_default_subnet.default_subnet_b.id,
 			aws_default_subnet.default_subnet_c.id
 		]
+		security_groups = [ aws_security_group.service_security_group.id ]
 	}
 }
 
@@ -54,4 +55,20 @@ DEFINITION
 	memory = 512
 	network_mode = "awsvpc"
 	requires_compatibilities = ["FARGATE"]
+}
+
+resource "aws_security_group" "service_security_group" {
+	egress {
+		cidr_blocks = [ "0.0.0.0/0" ]
+		from_port = 0
+		protocol = "-1"
+		to_port = 0
+	}
+
+	ingress {
+		from_port = 0
+		protocol = "-1"
+		to_port = 0
+		security_groups = [ aws_security_group.load_balancer_security_group.id ]
+	}
 }
