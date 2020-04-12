@@ -22,3 +22,7 @@ provider "aws" {
 resource "aws_ecr_repository" "experiment_node_example" {
 	name = "experiment_node_example"
 }
+
+resource "aws_ecs_cluster" "experiment_node_cluster" {
+  name = "experiment_node_cluster"
+}
