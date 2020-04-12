@@ -8,6 +8,8 @@ services:
 
   node:
     build: ./node-example
+    volumes:
+      - ./node-example:/app
 
   state:
     build:
