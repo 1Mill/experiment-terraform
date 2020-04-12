@@ -7,4 +7,6 @@ RUN npm install
 
 COPY *.js ./
 
+ENV PORT ${PORT}
+
 CMD [ "npm", "run", "start" ]

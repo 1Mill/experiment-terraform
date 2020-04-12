@@ -8,6 +8,10 @@ services:
 
   node-exmaple:
     build: ./node-example
+    environment:
+      PORT: 3000
+    ports:
+      - 3000:3000
     volumes:
       - ./node-example:/app
 
