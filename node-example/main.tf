@@ -17,9 +17,9 @@ resource "aws_ecs_service" "experiment_node_service" {
 	network_configuration {
 		assign_public_ip = true
 		subnets = [
-			aws_default_subnet.default_subnet_a,
-			aws_default_subnet.default_subnet_b,
-			aws_default_subnet.default_subnet_c
+			aws_default_subnet.default_subnet_a.id,
+			aws_default_subnet.default_subnet_b.id,
+			aws_default_subnet.default_subnet_c.id
 		]
 	}
 }
