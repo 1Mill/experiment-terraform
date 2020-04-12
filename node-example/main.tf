@@ -14,6 +14,12 @@ resource "aws_ecs_service" "experiment_node_service" {
 	name = "experiment_node_service"
 	task_definition = aws_ecs_task_definition.expeirment_node_task.arn
 
+	load_balancer {
+		container_name = aws_ecs_task_definition.expeirment_node_task.family
+		container_port = 3000
+		target_group_arn = aws_lb_target_group.target_group.arn
+	}
+
 	network_configuration {
 		assign_public_ip = true
 		subnets = [
