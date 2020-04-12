@@ -26,7 +26,7 @@ resource "aws_ecs_task_definition" "expeirment_node_task" {
 ]
 DEFINITION
 	cpu = 256
-	execution_role_arn = "${data.aws_iam_role.ecs_task_execution_role.arn}"
+	execution_role_arn = data.aws_iam_role.ecs_task_execution_role.arn
 	family = "expeirment_node_task"
 	memory = 512
 	network_mode = "awsvpc"
