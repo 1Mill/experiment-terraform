@@ -3,6 +3,8 @@ version: '3.7'
 services:
   aws:
     build:
+      args:
+        FOLDER: ${FOLDER}
       context: .
       dockerfile: aws.Dockerfile
     volumes:

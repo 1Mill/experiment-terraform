@@ -22,4 +22,8 @@ RUN add-apt-repository \
 	stable"
 RUN apt-get update && apt-get install --yes docker-ce docker-ce-cli containerd.io
 
+WORKDIR /app
+ARG FOLDER
+COPY ${FOLDER}/*.* ${FOLDER}/Dockerfile ./
+
 CMD [ "aws", "--version" ]
