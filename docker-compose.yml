@@ -6,6 +6,9 @@ services:
     volumes:
       - ./lambda:/app
 
+  node:
+    build: ./node-example
+
   state:
     build:
       args:
